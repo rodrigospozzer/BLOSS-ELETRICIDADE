@@ -1,0 +1,74 @@
+---
+interface Props {
+  items: { question: string; answer: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="max-w-3xl mx-auto space-y-4" data-reveal id="faq-accordion">
+  {items.map((item, index) => (
+    <div class="group border-b border-brand-secondary pb-4">
+      <h3 class="text-xl">
+        <button 
+          class="faq-button flex w-full justify-between items-center font-bold cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md"
+          aria-expanded="false"
+          aria-controls={`faq-answer-${index}`}
+          id={`faq-question-${index}`}
+        >
+          <span>{item.question}</span>
+          <span class="faq-icon transition-transform duration-300">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </button>
+      </h3>
+      <div 
+        id={`faq-answer-${index}`}
+        role="region"
+        aria-labelledby={`faq-question-${index}`}
+        class="faq-answer grid grid-rows-[0fr] transition-all duration-300 opacity-0"
+      >
+        <div class="overflow-hidden text-neutral-600 mt-0">
+          <div class="pt-3 pb-2">{item.answer}</div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.faq-button');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      const answer = button.nextElementSibling as HTMLElement;
+      const icon = button.querySelector('.faq-icon') as HTMLElement;
+      
+      // Close all others
+      buttons.forEach(btn => {
+        if (btn !== button) {
+          btn.setAttribute('aria-expanded', 'false');
+          const otherAnswer = btn.nextElementSibling as HTMLElement;
+          const otherIcon = btn.querySelector('.faq-icon') as HTMLElement;
+          otherAnswer.classList.remove('grid-rows-[1fr]', 'opacity-100');
+          otherAnswer.classList.add('grid-rows-[0fr]', 'opacity-0');
+          otherIcon.classList.remove('rotate-180');
+        }
+      });
+      
+      // Toggle current
+      button.setAttribute('aria-expanded', !expanded ? 'true' : 'false');
+      
+      if (!expanded) {
+        answer.classList.remove('grid-rows-[0fr]', 'opacity-0');
+        answer.classList.add('grid-rows-[1fr]', 'opacity-100');
+        icon.classList.add('rotate-180');
+      } else {
+        answer.classList.remove('grid-rows-[1fr]', 'opacity-100');
+        answer.classList.add('grid-rows-[0fr]', 'opacity-0');
+        icon.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>

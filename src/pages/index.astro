@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Accordion from '../components/Accordion.astro';
+import ReviewsCarousel from '../components/ReviewsCarousel.astro';
+import Gallery from '../components/Gallery.astro';
+
+const faq = [
+  { question: 'Como funciona?', answer: 'Nosso processo é simples e transparente...' },
+  { question: 'Qual o prazo?', answer: 'Depende do escopo, mas geralmente entre 2 e 4 semanas.' },
+];
+
+const reviews = [
+  { name: 'João Silva', role: 'CEO, Empresa', text: 'Trabalho incrível, superou as expectativas.' },
+  { name: 'Maria Souza', role: 'Diretora', text: 'O design ficou perfeito.' },
+];
+
+const gallery = [
+  { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80', alt: 'Foto 1' },
+  { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=80', alt: 'Foto 2' },
+  { src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=500&q=80', alt: 'Foto 3' },
+];
+---
+
+<Base>
+  <Hero />
+  
+  <section id="sobre" class="py-24 bg-brand-light">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8" data-reveal>Sobre nós</h2>
+      <p class="text-lg text-neutral-600 leading-relaxed" data-reveal>
+        Somos especialistas em criar experiências digitais que convertem.
+      </p>
+    </div>
+  </section>
+
+  <section id="servicos" class="py-24 bg-brand-accent">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-16 text-center" data-reveal>Nossos Serviços</h2>
+      <div class="max-w-4xl mx-auto relative">
+        <!-- SVG Line drawn by scroll -->
+        <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full text-brand-dark opacity-20 hidden md:block" preserveAspectRatio="none">
+          <path d="M 0 0 L 0 1000" stroke="currentColor" stroke-width="4" fill="none" data-draw-line />
+        </svg>
+        
+        <div class="grid md:grid-cols-2 gap-12 relative z-10">
+          <div class="bg-brand-light p-8 rounded-xl shadow-sm" data-reveal>Serviço 1</div>
+          <div class="bg-brand-light p-8 rounded-xl shadow-sm md:mt-24" data-reveal>Serviço 2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-16 text-center" data-reveal>Galeria</h2>
+      <Gallery images={gallery} />
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-dark text-brand-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-16 text-center" data-reveal>O que dizem</h2>
+      <ReviewsCarousel reviews={reviews} />
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-16 text-center" data-reveal>Perguntas Frequentes</h2>
+      <Accordion items={faq} />
+    </div>
+  </section>
+</Base>

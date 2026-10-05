@@ -1,0 +1,56 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Prevent building this page in production
+if (import.meta.env.PROD) {
+  return new Response(null, { status: 404 });
+}
+
+// Read the directory contents
+const originalsDir = path.join(process.cwd(), 'src', 'assets', 'originals');
+let files: string[] = [];
+
+try {
+  if (fs.existsSync(originalsDir)) {
+    files = fs.readdirSync(originalsDir).filter(f => !f.startsWith('.'));
+  }
+} catch (e) {
+  console.error("Error reading originals dir:", e);
+}
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DEV - Seleção de Fotos</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #f4f4f5; color: #18181b; padding: 2rem; }
+      h1 { text-align: center; margin-bottom: 2rem; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+      .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      .card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+      .card p { padding: 0.5rem; text-align: center; font-size: 0.875rem; margin: 0; word-break: break-all; }
+      .card p.num { font-weight: bold; background: #18181b; color: white; }
+    </style>
+  </head>
+  <body>
+    <h1>Fotos Disponíveis</h1>
+    {files.length === 0 ? (
+      <p style="text-align: center;">Nenhuma foto encontrada em src/assets/originals</p>
+    ) : (
+      <div class="grid">
+        {files.map((file, i) => (
+          <div class="card">
+            <p class="num">#{i + 1}</p>
+            {/* Em ambiente dev, podemos servir esses assets se os colocarmos no src, mas para imagens estáticas originais no src, o vite não as serve automaticamente via url absoluta se não importarmos, então usaremos um src import para o glob se necessário, ou assumimos que no dev environment o file route está exposto ou usamos um placeholder caso o astro não sirva. Para simplificar em Astro, import.meta.glob é melhor */}
+            <p>{file}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </body>
+</html>

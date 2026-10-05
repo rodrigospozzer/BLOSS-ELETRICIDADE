@@ -1,0 +1,73 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<!-- Overlay outside of header to avoid issues with fixed/backdrop-filter -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-brand-primary z-50 translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu principal">
+  <button id="menu-close" aria-label="Fechar menu" class="absolute top-6 right-4 w-10 h-10 flex flex-col justify-center items-center">
+    <span class="w-6 h-0.5 bg-brand-light rotate-45 absolute"></span>
+    <span class="w-6 h-0.5 bg-brand-light -rotate-45 absolute"></span>
+  </button>
+
+  <nav class="flex flex-col items-center space-y-8 text-2xl text-brand-light">
+    <a href="#sobre" class="menu-link opacity-0 translate-y-4">Sobre</a>
+    <a href="#servicos" class="menu-link opacity-0 translate-y-4">Serviços</a>
+    <a href="#contato" class="menu-link opacity-0 translate-y-4">Contato</a>
+    <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" class="menu-link opacity-0 translate-y-4 mt-8 px-6 py-3 bg-brand-accent text-brand-dark rounded-full text-lg font-bold">
+      Fale no WhatsApp
+    </a>
+  </nav>
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('menu-close');
+  const links = document.querySelectorAll('.menu-link');
+
+  let isOpen = false;
+
+  const openMenu = () => {
+    if (!overlay) return;
+    isOpen = true;
+    overlay.setAttribute('aria-hidden', 'false');
+    toggle?.setAttribute('aria-expanded', 'true');
+    overlay.classList.remove('translate-x-full');
+    window.lenis?.stop();
+    
+    gsap.to(links, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      stagger: 0.1,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+    
+    // Trap focus setup could go here
+  };
+
+  const closeMenu = () => {
+    if (!overlay) return;
+    isOpen = false;
+    overlay.setAttribute('aria-hidden', 'true');
+    toggle?.setAttribute('aria-expanded', 'false');
+    overlay.classList.add('translate-x-full');
+    window.lenis?.start();
+    
+    gsap.set(links, { opacity: 0, y: 16 });
+  };
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  
+  links.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) closeMenu();
+  });
+</script>

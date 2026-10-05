@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme {
+  --color-brand-primary: var(--color-primary);
+  --color-brand-secondary: var(--color-secondary);
+  --color-brand-accent: var(--color-accent);
+  --color-brand-dark: var(--color-dark);
+  --color-brand-light: var(--color-light);
+  --font-sans: var(--font-primary);
+  --font-serif: var(--font-secondary);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Managed by Lenis */
+  }
+  body {
+    @apply bg-brand-light text-brand-dark font-sans antialiased;
+  }
+  
+  /* Initial motion state */
+  .js [data-reveal] { 
+    opacity: 0; 
+    transform: translateY(24px); 
+  }
+  .js.reveal-all [data-reveal] { 
+    opacity: 1; 
+    transform: none; 
+    transition: opacity .6s, transform .6s; 
+  }
+  @media (prefers-reduced-motion: reduce) { 
+    .js [data-reveal] { 
+      opacity: 1; 
+      transform: none; 
+    } 
+  }
+
+  /* Utility classes */
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}

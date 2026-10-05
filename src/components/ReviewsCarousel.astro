@@ -1,0 +1,63 @@
+---
+interface Props {
+  reviews: { name: string; text: string; role?: string }[];
+}
+
+const { reviews } = Astro.props;
+---
+
+<div class="w-full overflow-hidden" data-reveal aria-label="Depoimentos de clientes" aria-roledescription="carousel">
+  <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8" id="reviews-container" role="group">
+    {reviews.map((review, index) => (
+      <div 
+        class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-brand-light p-8 rounded-2xl shadow-sm border border-brand-accent"
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`Depoimento ${index + 1} de ${reviews.length}`}
+      >
+        <p class="text-brand-dark mb-6 text-lg italic">"{review.text}"</p>
+        <h3 class="font-bold">{review.name}</h3>
+        {review.role && <div class="text-sm text-neutral-500">{review.role}</div>}
+      </div>
+    ))}
+  </div>
+  
+  <div class="flex justify-center gap-2 mt-4" aria-hidden="true">
+    {reviews.map((_, i) => (
+      <div class={`w-2 h-2 rounded-full ${i === 0 ? 'bg-brand-dark' : 'bg-brand-accent'}`} data-indicator={i}></div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const container = document.getElementById('reviews-container');
+  const indicators = document.querySelectorAll('[data-indicator]');
+  
+  if (container) {
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      const itemWidth = container.clientWidth;
+      const activeIndex = Math.round(scrollLeft / itemWidth);
+      
+      indicators.forEach((ind, i) => {
+        if (i === activeIndex) {
+          ind.classList.remove('bg-brand-accent');
+          ind.classList.add('bg-brand-dark');
+        } else {
+          ind.classList.add('bg-brand-accent');
+          ind.classList.remove('bg-brand-dark');
+        }
+      });
+    });
+  }
+</script>

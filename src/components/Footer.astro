@@ -1,0 +1,25 @@
+---
+import { siteConfig } from '../config/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-brand-dark text-brand-light py-12 border-t border-neutral-800">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="text-center md:text-left">
+      <div class="font-serif text-2xl font-bold mb-2">{siteConfig.name}</div>
+      <div class="text-neutral-400 text-sm">
+        {siteConfig.address}
+      </div>
+    </div>
+    
+    <div class="text-center md:text-right text-sm text-neutral-500">
+      <p>&copy; {currentYear} {siteConfig.name}. Todos os direitos reservados.</p>
+      <p class="mt-1">
+        <a href={siteConfig.creditUrl} target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition-colors">
+          {siteConfig.credit}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
