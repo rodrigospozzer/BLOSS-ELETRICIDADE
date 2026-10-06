@@ -25,7 +25,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/blosseletricidade/",
   },
   credit: "Desenvolvido por Z-Agent",
-  creditUrl: "https://z-agent.com",
+  creditUrl: "https://sites.z-agent.com.br",
 
   navigation: [
     { label: 'Início', href: '#inicio' },
