@@ -1,22 +1,64 @@
 @import "tailwindcss";
 @import "./tokens.css";
 
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-800-normal.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-brand-primary: var(--color-primary);
-  --color-brand-secondary: var(--color-secondary);
-  --color-brand-accent: var(--color-accent);
-  --color-brand-dark: var(--color-dark);
-  --color-brand-light: var(--color-light);
-  --font-sans: var(--font-primary);
-  --font-serif: var(--font-secondary);
+  --color-brand-yellow: var(--bloss-yellow);
+  --color-brand-black: var(--engineering-black);
+  --color-brand-orange: var(--infrastructure-orange);
+  --color-brand-offwhite: var(--warm-off-white);
+  --color-brand-surface: var(--surface);
+  --color-brand-text: var(--text-primary);
+  --color-brand-text-muted: var(--text-secondary);
+  --color-brand-border: var(--border);
+  --color-brand-whatsapp: var(--whatsapp);
+  --font-sans: var(--font-archivo);
 }
 
 @layer base {
   html {
     scroll-behavior: auto; /* Managed by Lenis */
   }
+  section[id] {
+    scroll-margin-top: 80px; /* Header height */
+  }
   body {
-    @apply bg-brand-light text-brand-dark font-sans antialiased;
+    @apply bg-brand-offwhite text-brand-text font-sans antialiased overflow-x-hidden;
   }
   
   /* Initial motion state */

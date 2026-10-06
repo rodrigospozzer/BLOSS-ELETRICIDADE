@@ -1,26 +1,148 @@
 ---
+import { siteConfig } from '../config/site';
+
+const heroImage = "/src/assets/originals/imgi_20_645618175_18083465300600356_3257977585925924954_n.webp";
 ---
 
-<section class="relative h-[100svh] overflow-hidden bg-brand-dark flex items-center justify-center">
-  <div class="absolute inset-0 w-full h-[115%] top-0">
+<section id="inicio" class="relative w-full overflow-hidden hero-container" style="background-color: var(--engineering-black);">
+  <!-- Background Image with precise crops -->
+  <div class="absolute inset-0 z-0 h-[115%] top-0 overflow-hidden" id="hero-bg-container">
     <img 
-      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
-      alt="Hero Background" 
-      class="w-full h-full object-cover object-center"
-      data-hero-parallax
+      src={heroImage} 
+      alt="Profissional da Bloss Eletricidade executando infraestrutura elétrica em uma parede de obra." 
+      class="w-full h-full object-cover object-[70%_38%] lg:object-[62%_50%]"
+      id="hero-bg-image"
+      fetchpriority="high"
+      loading="eager"
     />
-    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Dark overlay to ensure text legibility -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/60 to-transparent lg:w-3/5"></div>
+    <!-- Mobile specific bottom dark gradient for text -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent lg:hidden top-1/3"></div>
   </div>
 
-  <div class="relative z-10 container mx-auto px-4 text-center text-brand-light">
-    <h1 class="font-serif font-bold mb-6 max-w-4xl mx-auto text-[clamp(2.5rem,8vw,5rem)] leading-tight" data-split-text>
-      Design Premium para o seu Negócio
-    </h1>
-    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90" data-reveal>
-      Transformamos ideias em experiências digitais inesquecíveis.
-    </p>
-    <a href="#contato" class="inline-block bg-brand-light text-brand-dark px-8 py-4 rounded-full font-bold hover:bg-brand-accent transition-colors" data-reveal>
-      Solicite um Orçamento
-    </a>
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-5 lg:px-18 pt-[120px] lg:pt-[200px] pb-16 lg:pb-24 min-h-[1120px] lg:min-h-[760px] flex flex-col justify-end lg:justify-center">
+    
+    <div class="lg:w-[45%] text-brand-surface">
+      <span class="block text-[12px] lg:text-[14px] font-semibold uppercase tracking-wider text-brand-yellow mb-3 lg:mb-4">
+        {siteConfig.hero.label}
+      </span>
+      
+      <!-- Monumental Headline -->
+      <h1 class="text-[clamp(42px,12vw,56px)] lg:text-[clamp(54px,5vw,74px)] font-extrabold leading-[0.95] tracking-tight mb-5 lg:mb-6 break-words" id="hero-title">
+        {siteConfig.hero.headlinePart1}<br />
+        {siteConfig.hero.headlinePart2}<br />
+        <span class="text-brand-yellow break-words inline-block max-w-full">{siteConfig.hero.headlineHighlight}</span>
+      </h1>
+      
+      <p class="text-[17px] lg:text-[19px] leading-relaxed text-brand-offwhite/90 mb-8 lg:mb-10 max-w-lg">
+        {siteConfig.hero.supporting}
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 lg:gap-5 mb-10 lg:mb-14">
+        <a 
+          href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+          target="_blank" rel="noopener noreferrer"
+          class="bg-brand-yellow text-brand-black px-8 h-[52px] flex items-center justify-center font-bold text-[15px] uppercase tracking-wider rounded-[7px] hover:bg-white transition-colors"
+        >
+          {siteConfig.hero.ctaPrimary}
+        </a>
+        <a 
+          href="#servicos"
+          class="border border-brand-border/30 text-brand-surface px-8 h-[52px] flex items-center justify-center font-bold text-[15px] uppercase tracking-wider rounded-[7px] hover:bg-brand-surface hover:text-brand-black transition-colors"
+        >
+          {siteConfig.hero.ctaSecondary}
+        </a>
+      </div>
+
+      <!-- Service Rail -->
+      <div class="grid grid-cols-2 gap-x-4 gap-y-6 lg:flex lg:gap-10 border-t border-brand-border/20 pt-8 mt-8 lg:mt-12">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span class="text-[13px] lg:text-[14px] font-semibold text-brand-offwhite uppercase tracking-wider">{siteConfig.hero.proofs[0].label}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+          <span class="text-[13px] lg:text-[14px] font-semibold text-brand-offwhite uppercase tracking-wider">{siteConfig.hero.proofs[1].label}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          <span class="text-[13px] lg:text-[14px] font-semibold text-brand-offwhite uppercase tracking-wider">{siteConfig.hero.proofs[2].label}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12 12"></path></svg>
+          <span class="text-[13px] lg:text-[14px] font-semibold text-brand-offwhite uppercase tracking-wider">{siteConfig.hero.proofs[3].label}</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Split text for hero manually or just fade lines
+  // The rule: "Título do hero por linhas: dividir só depois de document.fonts.ready..."
+  document.fonts.ready.then(() => {
+    const title = document.getElementById('hero-title');
+    if (title) {
+      // Very basic split by lines (since we have a <br/>)
+      const html = title.innerHTML;
+      const parts = html.split('<br>');
+      if (parts.length > 2) {
+        title.innerHTML = `
+          <div class="overflow-visible"><div class="hero-line" style="transform: translateY(100%); opacity: 0;">${parts[0]}</div></div>
+          <div class="overflow-visible"><div class="hero-line" style="transform: translateY(100%); opacity: 0;">${parts[1]}</div></div>
+          <div class="overflow-visible"><div class="hero-line" style="transform: translateY(100%); opacity: 0;">${parts[2]}</div></div>
+        `;
+        
+        gsap.to('.hero-line', {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: 'power3.out',
+          delay: 0.2,
+          onComplete: () => {
+            document.querySelectorAll('.overflow-visible').forEach(el => {
+              const htmlEl = el as HTMLElement;
+              htmlEl.style.overflow = 'visible';
+              htmlEl.style.paddingRight = '0';
+              htmlEl.style.marginRight = '0';
+            });
+          }
+        });
+      }
+    }
+  });
+
+  // Parallax background
+  // Parallax do hero à prova de falhas: a imagem tem ~115% da altura do container, ancorada em top:0, e se move SOMENTE para cima, de 0 a -12% (yPercent)
+  const bgImage = document.getElementById('hero-bg-image');
+  if (bgImage) {
+    ScrollTrigger.create({
+      trigger: '.hero-container',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+      invalidateOnRefresh: true,
+      animation: gsap.to(bgImage, { yPercent: -12, ease: 'none' })
+    });
+  }
+</script>
+
+<style>
+  .overflow-visible {
+    overflow: hidden;
+    padding-right: 15px;
+    margin-right: -15px;
+  }
+  .js .overflow-visible {
+    /* override hidden after animation if needed, but usually hidden is fine for revealing text */
+  }
+</style>

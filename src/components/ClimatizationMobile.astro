@@ -1,0 +1,48 @@
+---
+// ClimatizationMobile.astro
+import { siteConfig } from '../config/site';
+const climaImage = '/src/assets/originals/imgi_17_670937440_18089925869600356_6417007879746538124_n.webp';
+---
+
+<section class="lg:hidden relative py-16 overflow-hidden bg-brand-black" aria-label="Especialistas em Climatização">
+  <!-- Background fotográfico escuro -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={climaImage} 
+      alt="Técnico trabalhando em equipamento externo de climatização." 
+      class="w-full h-full object-cover object-[70%_45%]"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-brand-black/80"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-5" data-reveal>
+    <div class="mb-8">
+      <h2 class="text-[32px] font-extrabold text-brand-surface leading-tight mb-4">
+        {siteConfig.climatization.headlinePart1}<br/>
+        {siteConfig.climatization.headlinePart2}<br/>
+        <span class="text-brand-yellow">{siteConfig.climatization.headlineHighlight}</span>
+      </h2>
+    </div>
+
+    <!-- Checklist -->
+    <ul class="space-y-4 mb-10">
+      {siteConfig.climatization.checklist.map(item => (
+        <li class="flex items-center gap-3 text-[16px] text-brand-offwhite">
+          <svg class="w-6 h-6 text-brand-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div>
+      <a 
+        href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessageClima)}`}
+        target="_blank" rel="noopener noreferrer"
+        class="bg-brand-yellow text-brand-black w-full h-[52px] flex items-center justify-center font-bold text-[15px] uppercase tracking-wider rounded-[7px] hover:bg-brand-surface transition-colors"
+      >
+        {siteConfig.climatization.cta}
+      </a>
+    </div>
+  </div>
+</section>

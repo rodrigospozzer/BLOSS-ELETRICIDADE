@@ -1,11 +1,13 @@
 :root {
-  --color-primary: #000000;
-  --color-secondary: #333333;
-  --color-accent: #f0f0f0;
-  --color-accent-strong: #cccccc;
-  --color-dark: #111111;
-  --color-light: #ffffff;
-  
-  --font-primary: 'Inter', sans-serif;
-  --font-secondary: 'Playfair Display', serif;
+  --bloss-yellow: #F5B800;
+  --engineering-black: #111111;
+  --infrastructure-orange: #F47A20;
+  --warm-off-white: #F6F6F3;
+  --surface: #FFFFFF;
+  --text-primary: #161616;
+  --text-secondary: #656565;
+  --border: #DADAD5;
+  --whatsapp: #25D366;
+
+  --font-archivo: "Archivo", system-ui, sans-serif;
 }

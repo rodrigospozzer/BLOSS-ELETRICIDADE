@@ -1,0 +1,51 @@
+---
+import { siteConfig } from '../config/site';
+
+const projects = siteConfig.projects.items;
+---
+
+<section id="projetos" class="py-16 lg:py-24 bg-brand-surface">
+  <div class="container mx-auto px-5 lg:px-18">
+    <div class="mb-12 lg:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6" data-reveal>
+      <div class="max-w-2xl">
+        <h2 class="text-[32px] lg:text-[46px] font-extrabold text-brand-black leading-tight mb-4" set:html={`${siteConfig.projects.headlinePrefix}<br class="lg:hidden" /> ${siteConfig.projects.headlineHighlight}`}>
+        </h2>
+        <p class="text-[16px] lg:text-[18px] text-brand-text-muted leading-relaxed">
+          {siteConfig.projects.supporting}
+        </p>
+      </div>
+      <a href="https://www.instagram.com/blosseletricidade/" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center text-brand-black font-bold text-[14px] uppercase tracking-wider hover:text-brand-orange transition-colors">
+        Ver mais no Instagram
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Grid Horizontal Desktop / Sequência Vertical Mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
+      {projects.map((project, index) => (
+        <div class="overflow-hidden bg-brand-black h-[400px] lg:h-[500px]" data-reveal>
+          <img 
+            src={project.image} 
+            alt={project.alt} 
+            class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.03]"
+            style={`object-position: ${project.deskCrop};`}
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center md:hidden" data-reveal>
+      <a href="https://www.instagram.com/blosseletricidade/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-black font-bold text-[14px] uppercase tracking-wider">
+        Ver mais no Instagram
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+// Cta.astro
+import { siteConfig } from '../config/site';
+
+const bgImage = '/src/assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg';
+---
+
+<section class="relative py-24 lg:py-32 bg-brand-black overflow-hidden" aria-label="Solicitar Orçamento">
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={bgImage} 
+      alt="Caixa de passagem e eletrodutos laranja instalados em laje." 
+      class="w-full h-full object-cover object-[50%_68%] lg:object-[50%_47%]"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-brand-black/70"></div>
+  </div>
+  
+  <div class="relative z-10 container mx-auto px-5 lg:px-18 text-center" data-reveal>
+    <h2 class="text-[36px] lg:text-[56px] font-extrabold text-brand-surface leading-tight mb-6 max-w-3xl mx-auto">
+      {siteConfig.ctaFinal.headlinePrefix} <span class="text-brand-yellow">{siteConfig.ctaFinal.headlineHighlight}</span>
+    </h2>
+    <p class="text-[18px] lg:text-[20px] text-brand-offwhite/80 mb-10 max-w-2xl mx-auto">
+      {siteConfig.ctaFinal.supporting}
+    </p>
+    
+    <a 
+      href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+      target="_blank" rel="noopener noreferrer"
+      class="inline-flex bg-brand-yellow text-brand-black px-10 h-[60px] items-center justify-center font-bold text-[16px] uppercase tracking-wider rounded-[7px] hover:bg-white transition-colors"
+    >
+      {siteConfig.ctaFinal.cta}
+    </a>
+  </div>
+</section>

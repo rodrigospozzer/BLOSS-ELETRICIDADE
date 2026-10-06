@@ -1,0 +1,67 @@
+---
+// Differentials.astro
+import { siteConfig } from '../config/site';
+const difImage = '/src/assets/originals/imgi_8_669658421_18088477829600356_2168918359444439195_n.webp';
+---
+
+<section id="diferenciais" class="bg-brand-black text-brand-surface py-16 lg:py-0 overflow-hidden">
+  <div class="flex flex-col lg:flex-row min-h-[600px]">
+    
+    <!-- Imagem Dominante (Apenas Desktop, à direita) -->
+    <div class="hidden lg:block lg:w-1/2 min-h-[400px] lg:min-h-full bg-brand-dark order-2 relative" data-reveal>
+      <img 
+        src={difImage} 
+        alt="Edificação com dois veículos identificados da Bloss Eletricidade em frente." 
+        class="absolute inset-0 w-full h-full object-cover object-[50%_78%]"
+      />
+    </div>
+
+    <!-- Conteúdo (À esquerda) -->
+    <div class="w-full lg:w-1/2 flex items-center p-8 lg:p-24 order-1" data-reveal>
+      <div class="max-w-xl">
+        <h2 class="text-[32px] lg:text-[46px] font-extrabold leading-tight mb-10 lg:mb-16">
+          {siteConfig.differentials.headlinePrefix} <span class="text-brand-yellow">{siteConfig.differentials.headlineHighlight}</span>
+        </h2>
+        
+        <div class="space-y-8 lg:space-y-10">
+          <div class="flex items-start gap-4 lg:gap-6">
+            <div class="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 border border-brand-yellow/30 flex items-center justify-center rounded-full text-brand-yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[20px] lg:text-[22px] font-bold mb-2">{siteConfig.differentials.items[0].title}</h3>
+              <p class="text-[15px] lg:text-[16px] text-brand-offwhite/70 leading-relaxed">{siteConfig.differentials.items[0].desc}</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 lg:gap-6">
+            <div class="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 border border-brand-yellow/30 flex items-center justify-center rounded-full text-brand-yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[20px] lg:text-[22px] font-bold mb-2">{siteConfig.differentials.items[1].title}</h3>
+              <p class="text-[15px] lg:text-[16px] text-brand-offwhite/70 leading-relaxed">{siteConfig.differentials.items[1].desc}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 lg:gap-6">
+            <div class="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 border border-brand-yellow/30 flex items-center justify-center rounded-full text-brand-yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[20px] lg:text-[22px] font-bold mb-2">{siteConfig.differentials.items[2].title}</h3>
+              <p class="text-[15px] lg:text-[16px] text-brand-offwhite/70 leading-relaxed">{siteConfig.differentials.items[2].desc}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+// Location.astro
+import { siteConfig } from '../config/site';
+---
+
+<section id="contato" class="py-0 lg:py-24 bg-brand-surface border-t border-brand-border/20">
+  <div class="container mx-auto px-0 lg:px-18 pb-16 lg:pb-0">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+      
+      <!-- Map (Mobile First, Desktop Second) -->
+      <div class="w-full lg:w-8/12 order-1 lg:order-2" data-reveal>
+        <div class="w-full h-[400px] lg:h-[600px] bg-brand-border/20 lg:rounded-[8px] overflow-hidden grayscale contrast-125">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.0468305710294!2d-51.1097223!3d-29.3780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ea608b2c45f4b%3A0x94f1c1f4e1f827e7!2sRua%20das%20Tr%C3%AAs%20Marias%2C%20715%20-%20Nova%20Petr%C3%B3polis%2C%20RS%2C%2095150-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de localização da Bloss Eletricidade em Nova Petrópolis">
+          </iframe>
+        </div>
+      </div>
+      
+      <!-- Text / Card (Mobile Second, Desktop First) -->
+      <div class="w-full lg:w-4/12 order-2 lg:order-1" data-reveal>
+        <div class="bg-brand-black text-brand-surface lg:bg-transparent lg:text-brand-black p-8 lg:p-0 -mt-16 lg:mt-0 relative z-10 mx-5 lg:mx-0 rounded-[8px] lg:rounded-none">
+          <h2 class="text-[32px] lg:text-[46px] font-extrabold leading-tight mb-6">
+            {siteConfig.location.headlinePrefix} <span class="text-brand-yellow lg:text-brand-orange">{siteConfig.location.headlineHighlight}</span>
+          </h2>
+          <p class="text-[16px] lg:text-[18px] text-brand-offwhite/80 lg:text-brand-text-muted leading-relaxed mb-10">
+            {siteConfig.location.supporting}
+          </p>
+        
+        <div class="space-y-8">
+          <div>
+            <div class="text-[13px] font-bold uppercase tracking-wider text-brand-offwhite/50 lg:text-brand-text-muted mb-2">{siteConfig.location.addressLabel}</div>
+            <div class="text-[18px] lg:text-[20px] font-bold">{siteConfig.address}</div>
+          </div>
+          <div>
+            <div class="text-[13px] font-bold uppercase tracking-wider text-brand-offwhite/50 lg:text-brand-text-muted mb-2">{siteConfig.location.contactLabel}</div>
+            <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" class="text-[18px] lg:text-[20px] font-bold hover:text-brand-yellow lg:hover:text-brand-orange transition-colors">
+              {siteConfig.phone}
+            </a>
+          </div>
+          <div>
+            <div class="text-[13px] font-bold uppercase tracking-wider text-brand-offwhite/50 lg:text-brand-text-muted mb-2">{siteConfig.location.hoursLabel}</div>
+            <div class="text-[18px] lg:text-[20px] font-bold">{siteConfig.hours.weekdays}</div>
+            <div class="text-[16px] text-brand-offwhite/80 lg:text-brand-text-muted">{siteConfig.hours.weekend}</div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
