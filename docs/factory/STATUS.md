@@ -15,8 +15,8 @@ Os estados devem ser atualizados pelas respectivas fases da Factory.
 
 ## Fase 02 — Content Strategy
 
-**Status:** NÃO INICIADO  
-**Gate 02:** PENDENTE
+**Status:** CONCLUÍDA  
+**Gate 02:** APPROVED
 
 ---
 
