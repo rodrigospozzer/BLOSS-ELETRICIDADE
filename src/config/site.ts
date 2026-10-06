@@ -68,7 +68,7 @@ export const siteConfig = {
       {
         title: 'Instalações Elétricas',
         desc: 'Infraestrutura completa para obras residenciais e comerciais.',
-        image: srv1.src,
+        image: srv1,
         deskCrop: '52% 58%',
         mobCrop: '50% 60%',
         alt: 'Infraestrutura elétrica com eletrodutos laranja instalados sobre laje.'
@@ -76,7 +76,7 @@ export const siteConfig = {
       {
         title: 'Ar-condicionado Split',
         desc: 'Instalação técnica com garantia de eficiência e acabamento.',
-        image: srv2.src,
+        image: srv2,
         deskCrop: '64% 27%',
         mobCrop: '62% 30%',
         alt: 'Ar-condicionado Split instalado em ambiente residencial.'
@@ -84,7 +84,7 @@ export const siteConfig = {
       {
         title: 'Manutenção e Reparos',
         desc: 'Diagnóstico e resolução rápida de falhas elétricas.',
-        image: srv3.src,
+        image: srv3,
         deskCrop: '72% 52%',
         mobCrop: '72% 52%',
         alt: 'Técnico realizando serviço em equipamento externo de climatização.'
@@ -92,7 +92,7 @@ export const siteConfig = {
       {
         title: 'Projetos e Consultoria',
         desc: 'Planejamento de quadros de distribuição e iluminação.',
-        image: srv4.src,
+        image: srv4,
         deskCrop: '55% 25%',
         mobCrop: '52% 30%',
         alt: 'Ambiente interno com projeto de iluminação instalado.'
@@ -131,25 +131,25 @@ export const siteConfig = {
     supporting: "O padrão Bloss aplicado em dezenas de residências, prédios e comércios na Serra Gaúcha.",
     items: [
       {
-        image: proj1.src,
+        image: proj1,
         deskCrop: '58% 38%',
         mobCrop: '55% 45%',
         alt: 'Infraestrutura elétrica instalada em ambiente interno ainda em obra.',
       },
       {
-        image: srv2.src,
+        image: srv2,
         deskCrop: '58% 35%',
         mobCrop: '54% 42%',
         alt: 'Ambiente residencial com ar-condicionado Split instalado.',
       },
       {
-        image: proj3.src,
+        image: proj3,
         deskCrop: '50% 62%',
         mobCrop: '50% 64%',
         alt: 'Caixa de passagem e eletrodutos instalados sobre laje.',
       },
       {
-        image: proj4.src,
+        image: proj4,
         deskCrop: '50% 70%',
         mobCrop: '50% 67%',
         alt: 'Laje em obra com eletrodutos laranja distribuídos sobre a estrutura.',

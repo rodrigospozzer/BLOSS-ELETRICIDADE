@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../config/site';
+import { Image } from 'astro:assets';
 
 const projects = siteConfig.projects.items;
 ---
@@ -27,11 +28,13 @@ const projects = siteConfig.projects.items;
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
       {projects.map((project, index) => (
         <div class="overflow-hidden bg-brand-black h-[400px] lg:h-[500px]" data-reveal>
-          <img 
+          <Image 
             src={project.image} 
             alt={project.alt} 
             class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.03]"
             style={`object-position: ${project.deskCrop};`}
+            width={400}
+            format="webp"
             loading="lazy"
           />
         </div>

@@ -1,6 +1,7 @@
 ---
 // Authority.astro
 import authImage from '../assets/originals/imgi_8_669658421_18088477829600356_2168918359444439195_n.webp';
+import { Image } from 'astro:assets';
 ---
 
 <section id="autoridade" class="lg:hidden bg-brand-surface py-16" aria-label="Nossa Estrutura">
@@ -16,10 +17,12 @@ import authImage from '../assets/originals/imgi_8_669658421_18088477829600356_21
     </div>
 
     <div class="w-full aspect-[4/3] overflow-hidden bg-brand-black rounded-[8px]" data-reveal>
-      <img 
-        src={authImage.src} 
+      <Image 
+        src={authImage} 
         alt="Edificação com frota da Bloss Eletricidade em frente." 
         class="w-full h-full object-cover object-[50%_82%]"
+        width={768}
+        format="webp"
         loading="lazy"
       />
     </div>

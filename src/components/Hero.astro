@@ -1,19 +1,25 @@
 ---
 import { siteConfig } from '../config/site';
 import heroImage from '../assets/originals/hero_bg.png';
+import { getImage } from 'astro:assets';
+
+const mobileImg = await getImage({ src: heroImage, format: 'webp', width: 768 });
+const desktopImg = await getImage({ src: heroImage, format: 'webp', width: 1920 });
 ---
 
 <section id="inicio" class="relative w-full overflow-hidden hero-container" style="background-color: var(--engineering-black);">
   <!-- Background Image with precise crops -->
   <div class="absolute inset-0 z-0 h-[115%] top-0 overflow-hidden" id="hero-bg-container">
-    <img 
-      src={heroImage.src} 
-      alt="Profissional da Bloss Eletricidade executando infraestrutura elétrica em uma parede de obra." 
-      class="w-full h-full object-cover object-[70%_38%] lg:object-[62%_50%]"
-      id="hero-bg-image"
-      fetchpriority="high"
-      loading="eager"
-    />
+    <picture id="hero-bg-image" class="absolute inset-0 w-full h-full block">
+      <source media="(min-width: 1024px)" srcset={desktopImg.src} type="image/webp" />
+      <img 
+        src={mobileImg.src} 
+        alt="Profissional da Bloss Eletricidade executando infraestrutura elétrica em uma parede de obra." 
+        class="w-full h-full object-cover object-[70%_38%] lg:object-[62%_50%]"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </picture>
     <!-- Dark overlay to ensure text legibility -->
     <div class="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/60 to-transparent lg:w-3/5"></div>
     <!-- Mobile specific bottom dark gradient for text -->

@@ -3,14 +3,18 @@
 import { siteConfig } from '../config/site';
 
 import bgImage from '../assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <section class="relative py-24 lg:py-32 bg-brand-black overflow-hidden" aria-label="Solicitar Orçamento">
   <div class="absolute inset-0 z-0">
-    <img 
-      src={bgImage.src} 
+    <Image 
+      src={bgImage} 
       alt="Caixa de passagem e eletrodutos laranja instalados em laje." 
       class="w-full h-full object-cover object-[50%_68%] lg:object-[50%_47%]"
+      widths={[768, 1920]}
+      sizes="(max-width: 1023px) 768px, 1920px"
+      format="webp"
       loading="lazy"
     />
     <div class="absolute inset-0 bg-brand-black/70"></div>
