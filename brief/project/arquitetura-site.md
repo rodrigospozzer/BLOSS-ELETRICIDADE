@@ -1,540 +1,622 @@
-# Arquitetura do Site — Template Z-Agent
+# Arquitetura do Site — Bloss Eletricidade
 
-Este documento define a estratégia, conteúdo e arquitetura específica do projeto.
+Este arquivo é a SOURCE OF PROJECT TRUTH operacional do projeto BLOSS ELETRICIDADE.
 
-Ele NÃO define a identidade visual final.
-Ele NÃO substitui o Perfil Corporativo.
-Ele NÃO substitui o Manual de Identidade Visual.
-Ele NÃO é um mockup.
+Ele define:
+- objetivo comercial;
+- prioridade de conversão;
+- público;
+- serviços;
+- hierarquia;
+- ordem das seções;
+- requisitos funcionais;
+- restrições de conteúdo.
+
+Ele NÃO substitui:
+- `brief/corporate/perfil-corporativo.pdf`
+- `brief/brand/manual-identidade.pdf`
+- os mockups aprovados;
+- `brief/design/implementation-spec.md`
+- `brief/design/asset-map.md`
 
 ---
 
-# 1. Regras de fonte
+# 1. Fontes de verdade
 
 ## Verdade factual
 
-Informações sobre empresa, serviços, endereço, contatos, horários, avaliações, números, garantias e outros fatos devem vir de:
+Fonte:
 
-brief/corporate/perfil-corporativo.pdf
+`brief/corporate/perfil-corporativo.pdf`
 
-Nunca inventar informações para preencher lacunas.
+Informações factuais sobre empresa, serviços, endereço, contatos, horários, avaliações, números, credenciais e demais dados devem vir desse documento.
+
+Não preencher lacunas por inferência.
 
 ## Verdade da marca
 
-Cores, tipografia, estilo, personalidade e direção visual devem vir de:
+Fonte:
 
-brief/brand/manual-identidade.pdf
+`brief/brand/manual-identidade.pdf`
+
+Define:
+- identidade;
+- cores;
+- tipografia;
+- fotografia;
+- personalidade;
+- direção visual.
 
 ## Verdade do projeto
 
-A estrutura, objetivo, prioridade comercial e textos específicos deste site são definidos neste documento.
+Fontes:
+
+`brief/project/arquitetura-site.md`
+`brief/project/arquitetura-site.pdf`
+
+Este `.md` é a versão operacional para agentes e desenvolvimento.
 
 ## Verdade visual
 
-Depois da aprovação dos mockups, a composição visual final será definida por:
+Fontes:
 
-brief/design/approved-desktop.png
-brief/design/approved-mobile.png
+`brief/design/sections/desktop/approved-desktop.png`
+`brief/design/sections/mobile/approved-mobile.png`
+
+Os mockups aprovados são SOURCE OF VISUAL TRUTH.
+
+## Verdade de implementação
+
+Fontes:
+
+`brief/design/implementation-spec.md`
+`brief/design/asset-map.md`
 
 ---
 
-# 2. Identificação do projeto
+# 2. Identificação
 
 PROJECT_NAME:
+Bloss Eletricidade
 
 SITE_TYPE:
 Landing Page
 
 PROJECT_STATUS:
-DRAFT
+APPROVED_FOR_IMPLEMENTATION
+
+STRUCTURE_MODE:
+DEFAULT
+
+COPY_MODE:
+AUTO
 
 ---
 
 # 3. Objetivo comercial
 
 PRIMARY_GOAL:
-
-Exemplos:
-- gerar pedidos de orçamento;
-- gerar agendamentos;
-- apresentar serviço premium;
-- captar leads;
-- vender produto;
-- gerar visitas físicas.
+Gerar solicitações de orçamento qualificadas, priorizando contato direto pelo WhatsApp.
 
 PRIMARY_CTA:
+Solicitar orçamento pelo WhatsApp
 
 SECONDARY_CTA:
+Ver serviços / projetos realizados
 
 TARGET_AUDIENCE:
+Clientes residenciais; empresas e condomínios; arquitetos, engenheiros, construtoras e responsáveis por obras na região atendida.
 
 PRIMARY_SERVICE_OR_PRODUCT:
+Instalação, manutenção e infraestrutura elétrica residencial, predial e comercial.
 
 SECONDARY_SERVICES:
+- Instalação de ar-condicionado Split
+- Higienização / limpeza de ar-condicionado
+- Manutenção de ar-condicionado
+- Reinstalação de ar-condicionado
 
 GEOGRAPHIC_FOCUS:
+Nova Petrópolis / RS e região atendida conforme Perfil Corporativo.
 
 ---
 
-# 4. Modo de estrutura
+# 4. Princípio de conversão
 
-STRUCTURE_MODE:
-DEFAULT
+A página deve responder progressivamente:
 
-Valores permitidos:
+1. Vocês fazem o que eu preciso?
+2. Posso confiar?
+3. Vocês atendem minha região?
+4. Como entro em contato?
 
-DEFAULT
-CUSTOM
+Fluxo narrativo:
 
-## DEFAULT
+ENTENDER
+→ CONFIAR
+→ ENCAIXAR
+→ PROVAR
+→ LOCALIZAR
+→ DECIDIR
 
-Quando STRUCTURE_MODE = DEFAULT:
+WhatsApp é o principal canal de conversão.
 
-utilizar a arquitetura padrão Z-Agent descrita neste documento como ponto de partida.
-
-Ela define conteúdo e narrativa.
-
-Ela NÃO define layout visual.
-
-A ordem pode ser refinada quando houver justificativa estratégica.
-
-Se uma seção não possuir conteúdo factual suficiente ou não fizer sentido para o negócio, ela poderá ser omitida.
-
-## CUSTOM
-
-Quando STRUCTURE_MODE = CUSTOM:
-
-a seção "Estrutura Customizada" abaixo passa a definir a ordem obrigatória da página.
-
-Não substituir a estrutura fornecida por uma estrutura padrão.
+Fotografias reais devem funcionar como prova de capacidade operacional.
 
 ---
 
-# 5. Modo de copy
-
-COPY_MODE:
-AUTO
-
-Valores permitidos:
-
-AUTO
-PROVIDED
-MIXED
-
-## AUTO
-
-Criar a copy usando somente informações suportadas pelo Perfil Corporativo.
-
-É permitido melhorar:
-
-- clareza;
-- persuasão;
-- escaneabilidade;
-- hierarquia;
-- linguagem comercial.
-
-É proibido inventar fatos.
-
-## PROVIDED
-
-Preservar os textos fornecidos neste documento.
-
-Não reescrever sem solicitação.
-
-## MIXED
-
-Textos marcados como APPROVED devem ser preservados.
-
-Os demais podem ser desenvolvidos a partir do Perfil Corporativo.
-
----
-
-# 6. Arquitetura padrão Z-Agent
-
-Quando STRUCTURE_MODE = DEFAULT, considerar esta arquitetura completa:
+# 5. Estrutura Desktop aprovada
 
 1. Header
 2. Hero
 3. Prova rápida / confiança
 4. Serviços / soluções
-5. Diferenciais / benefícios
-6. Sobre / autoridade
-7. Processo / como funciona
-8. Projetos / portfólio / provas visuais
-9. Resultados / antes e depois, quando aplicável
-10. Avaliações / depoimentos
-11. Localização / área atendida, quando relevante
-12. FAQ
-13. CTA final
-14. Footer
-15. WhatsApp flutuante, quando aplicável
+5. Diferenciais reais
+6. Projetos / portfólio
+7. Avaliações / depoimentos
+8. Localização / área atendida
+9. FAQ factual
+10. CTA final
+11. Footer
 
-IMPORTANTE:
+A autoridade institucional está integrada principalmente à seção de diferenciais.
 
-Esta lista NÃO é um template visual.
-
-Não significa:
-
-Hero
-→ quatro cards
-→ três cards
-→ depoimentos
-→ CTA.
-
-Cada projeto deverá receber uma composição visual própria na etapa de mockup.
+Não adicionar uma seção corporativa genérica no desktop se ela não estiver prevista no mockup aprovado.
 
 ---
 
-# 7. Estrutura Customizada
+# 6. Estrutura Mobile aprovada
 
-Preencher somente quando:
+O mockup mobile apresentado em três painéis representa UMA página contínua.
 
-STRUCTURE_MODE = CUSTOM
+Ordem:
 
-SITE_STRUCTURE:
+1. Header
+2. Hero
+3. Prova rápida / confiança
+4. Serviços / soluções
+5. Diferenciais reais
+6. Projetos / portfólio
+7. Avaliações / depoimentos
+8. Localização / área atendida
+9. Bloco de climatização
+10. FAQ factual
+11. CTA final
+12. Autoridade / Sobre
+13. Footer
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
+Não forçar a mesma composição estrutural do desktop no mobile.
 
 ---
 
-# 8. Seções obrigatórias
+# 7. Seções obrigatórias
 
 MANDATORY_SECTIONS:
 
--
+- Header
+- Hero
+- Prova rápida / confiança
+- Serviços / soluções
+- Diferenciais reais
+- Projetos / portfólio
+- Avaliações / depoimentos
+- Localização / área atendida
+- Mapa
+- FAQ factual
+- CTA final
+- Footer
+
+MOBILE_ADDITIONAL_SECTIONS:
+
+- Climatização
+- Autoridade / Sobre
 
 ---
 
-# 9. Seções opcionais
+# 8. Header
 
-OPTIONAL_SECTIONS:
+OBJETIVO:
+Orientação imediata e acesso à ação principal.
 
--
+CONTEÚDO:
+- Logo
+- Início
+- Serviços
+- Projetos
+- Sobre
+- Avaliações
+- Contato
 
----
+CTA:
+Solicitar orçamento
 
-# 10. Não incluir
-
-DO_NOT_INCLUDE:
-
--
-
----
-
-# 11. Conteúdo específico fornecido
-
-Preencher quando COPY_MODE = PROVIDED ou MIXED.
-
-## Hero
-
-EYEBROW:
-
-HEADLINE:
-
-SUBHEADLINE:
-
-PRIMARY_CTA_TEXT:
-
-SECONDARY_CTA_TEXT:
-
-COPY_STATUS:
-AUTO | APPROVED
+MOBILE:
+Logo + WhatsApp + menu hamburger.
 
 ---
 
-## Sobre
+# 9. Hero
 
-TITLE:
+OBJETIVO:
+Comunicar imediatamente serviço, região, competência e ação.
 
-TEXT:
+MENSAGEM:
+Infraestrutura elétrica e climatização com execução profissional.
 
-COPY_STATUS:
-AUTO | APPROVED
+CONTEÚDO:
+- Headline forte
+- Apoio sobre elétrica e climatização
+- Localização
+- CTA WhatsApp
+- CTA secundário quando previsto
+- Provas rápidas
+- Fotografia real
 
----
-
-## Serviços
-
-SERVICE_01:
-
-TITLE:
-
-TEXT:
-
-COPY_STATUS:
-AUTO | APPROVED
-
-SERVICE_02:
-
-TITLE:
-
-TEXT:
-
-COPY_STATUS:
-AUTO | APPROVED
-
-Adicionar quantos forem necessários.
+ASSET:
+Fotografia real definida em `brief/design/asset-map.md`.
 
 ---
 
-## Processo
+# 10. Prova rápida / confiança
 
-TITLE:
+OBJETIVO:
+Reduzir risco percebido antes de aprofundar os serviços.
 
-STEPS:
+CONTEÚDO:
+- Nota Google
+- Quantidade de avaliações validada
+- Horários publicados
+- Nova Petrópolis / região
+- Operação local
 
-COPY_STATUS:
-AUTO | APPROVED
-
----
-
-## Projetos / Galeria
-
-TITLE:
-
-TEXT:
-
-COPY_STATUS:
-AUTO | APPROVED
+IMPORTANTE:
+Revalidar dados variáveis antes do deploy.
 
 ---
 
-## Avaliações
+# 11. Serviços / soluções
 
-Não criar avaliações.
+OBJETIVO:
+Permitir identificação rápida com a necessidade do visitante.
 
-Usar apenas avaliações reais do Perfil Corporativo.
+SERVIÇOS DO LAYOUT:
 
----
+1. Instalações elétricas
+2. Ar-condicionado Split
+3. Manutenção e reparos
+4. Projetos e consultoria
 
-## FAQ
+Não ampliar o catálogo sem suporte factual.
 
-QUESTIONS_PROVIDED:
+Fotografias conforme:
 
--
-
-COPY_STATUS:
-AUTO | APPROVED
-
----
-
-## CTA Final
-
-TITLE:
-
-TEXT:
-
-CTA_TEXT:
-
-COPY_STATUS:
-AUTO | APPROVED
+`brief/design/asset-map.md`
 
 ---
 
-# 12. Elementos funcionais
+# 12. Diferenciais reais
+
+OBJETIVO:
+Transformar padrões percebidos nas avaliações públicas em argumentos de confiança.
+
+ATRIBUTOS:
+- organização;
+- cuidado;
+- qualidade de execução;
+- atendimento;
+- domínio técnico;
+- confiança.
+
+Evitar transformar essas características em garantias absolutas não documentadas.
+
+---
+
+# 13. Projetos / portfólio
+
+OBJETIVO:
+Mostrar competência por meio de trabalhos reais.
+
+PROJETOS DO LAYOUT:
+
+1. Infraestrutura elétrica
+2. Instalação de ar-condicionado
+3. Quadro / caixa e infraestrutura
+4. Infraestrutura externa
+
+Fotografias:
+
+`brief/design/asset-map.md`
+
+Não utilizar stock.
+
+---
+
+# 14. Avaliações / depoimentos
+
+OBJETIVO:
+Reduzir objeções com prova social real.
+
+CONTEÚDO:
+Avaliações públicas reais disponíveis no Perfil Corporativo.
+
+REGRAS:
+- não inventar depoimentos;
+- não inventar nomes;
+- não inventar fotos de avaliadores;
+- atualizar quantidade de avaliações antes da publicação.
+
+---
+
+# 15. Localização / área atendida
+
+LOCATION_SECTION:
+YES
+
+MAP:
+YES
+
+CONTEÚDO:
+- Nova Petrópolis / RS
+- endereço confirmado;
+- região atendida;
+- mapa;
+- link para rota.
+
+Fonte factual:
+
+`brief/corporate/perfil-corporativo.pdf`
+
+---
+
+# 16. Bloco de climatização — Mobile
+
+MOBILE_ONLY:
+YES
+
+OBJETIVO:
+Dar ênfase específica aos serviços de climatização no fluxo mobile.
+
+CONTEÚDO:
+- instalação;
+- higienização;
+- manutenção / reinstalação;
+- CTA de orçamento.
+
+Fotografia:
+
+`brief/design/asset-map.md`
+
+Não criar versão desktop independente desta seção sem nova aprovação visual.
+
+---
+
+# 17. FAQ
+
+FAQ:
+YES
+
+OBJETIVO:
+Responder dúvidas de decisão com informação factual.
+
+TÓPICOS:
+- serviços;
+- manutenção / higienização;
+- região atendida;
+- instalação de Split;
+- orçamento;
+- empresas e condomínios.
+
+Não inventar:
+- garantias;
+- prazos;
+- políticas;
+- formas de pagamento.
+
+---
+
+# 18. CTA final
+
+OBJETIVO:
+Encerrar a narrativa com ação direta.
+
+PRIMARY_CTA:
+Solicitar orçamento pelo WhatsApp
+
+SECONDARY_CTA:
+Ver nossos serviços
+
+Fotografia de fundo conforme:
+
+`brief/design/asset-map.md`
+
+---
+
+# 19. Autoridade / Sobre
+
+DESKTOP:
+Integrada principalmente à seção de diferenciais.
+
+MOBILE:
+Seção própria após o CTA final, conforme mockup aprovado.
+
+Fotografia:
+Prédio + veículos Bloss conforme `asset-map.md`.
+
+IMPORTANTE:
+Claims sobre tempo de atuação devem estar validados antes da publicação.
+
+---
+
+# 20. Footer
+
+CONTEÚDO:
+- Logo
+- descrição curta
+- links de navegação
+- Instagram
+- WhatsApp
+- localização
+- copyright
+
+No mobile:
+- navegação vertical;
+- CTA WhatsApp destacado.
+
+---
+
+# 21. Elementos opcionais / funcionais
 
 WHATSAPP_FLOATING:
 YES
 
-LOCATION_SECTION:
-AUTO
-
-MAP:
-AUTO
-
 FAQ:
-AUTO
+YES
 
 GALLERY:
-AUTO
+YES
 
 BEFORE_AFTER:
-AUTO
+NO
+
+MAP:
+YES
 
 PRICING:
 NO
 
-CONTACT_FORM:
+FORM:
 NO
 
-BOOKING:
-NO
-
-SOCIAL_LINKS:
+LOCATION_SECTION:
 YES
 
----
+PROCESS_SECTION:
+NO
 
-# 13. Header
-
-HEADER_MODE:
-AUTO
-
-MENU_ITEMS:
-AUTO
-
-HEADER_PRIMARY_CTA:
-AUTO
-
-SPECIAL_REQUIREMENTS:
-
--
+Processo / Como funciona só poderá ser incluído após validação de um processo institucional oficial.
 
 ---
 
-# 14. Footer
-
-Exibir quando disponíveis:
-
-- logo;
-- telefone;
-- WhatsApp;
-- endereço;
-- redes sociais;
-- horários;
-- copyright.
-
-Incluir obrigatoriamente:
-
-Site desenvolvido por Z-Agent
-
-Link:
-
-https://site.z-agent.com.br
-
----
-
-# 15. SEO
-
-SEO_MODE:
-AUTO
-
-PRIMARY_SEARCH_INTENT:
-
-PRIMARY_LOCATION:
-
-SPECIAL_KEYWORDS:
-
--
-
-A estratégia de SEO deve utilizar somente serviços e localidades realmente suportados pelo Perfil Corporativo.
-
----
-
-# 16. Assets prioritários
-
-Caso alguma fotografia ou elemento precise obrigatoriamente aparecer:
-
-MANDATORY_ASSETS:
-
--
-
-PREFERRED_ASSETS:
-
--
-
-DO_NOT_USE_ASSETS:
-
--
-
-A escolha visual definitiva dos assets será documentada posteriormente em:
-
-brief/design/asset-map.md
-
----
-
-# 17. Requisitos especiais
-
-SPECIAL_REQUIREMENTS:
-
--
-
-Exemplos:
-
-- destacar determinado serviço;
-- mostrar mapa;
-- priorizar atendimento via WhatsApp;
-- apresentar antes/depois;
-- não mostrar preços;
-- destacar determinada unidade;
-- incluir vídeo;
-- destacar determinada avaliação.
-
----
-
-# 18. Prioridade narrativa
-
-Definir quando necessário:
-
-PRIMARY_MESSAGE:
-
-SECONDARY_MESSAGE:
-
-TERTIARY_MESSAGE:
-
-A página deve deixar clara a mensagem principal antes das informações secundárias.
-
----
-
-# 19. Conteúdo ausente
-
-CONTENT_MISSING:
-
--
-
-Nunca preencher lacunas factuais por inferência.
-
----
-
-# 20. Resumo operacional
-
-PROJECT_NAME:
-
-STRUCTURE_MODE:
-
-COPY_MODE:
-
-PRIMARY_GOAL:
-
-PRIMARY_CTA:
-
-SECONDARY_CTA:
-
-TARGET_AUDIENCE:
-
-PRIMARY_SERVICE_OR_PRODUCT:
-
-MANDATORY_SECTIONS:
+# 22. Não incluir
 
 DO_NOT_INCLUDE:
 
-SPECIAL_REQUIREMENTS:
-
-CONTENT_MISSING:
+- preços sem confirmação;
+- tabela de pricing;
+- garantia não confirmada;
+- prazo padrão não confirmado;
+- emergência 24h como promessa sem validação;
+- “melhor eletricista”;
+- “mais barato”;
+- superlativos não comprovados;
+- cidades não confirmadas;
+- clientes ou parceiros sem autorização;
+- certificações não verificadas;
+- imagens de banco;
+- imagens geradas por IA;
+- antes/depois sem pares reais;
+- formulário como canal principal;
+- dashboards;
+- visual SaaS;
+- glassmorphism;
+- neon;
+- elementos futuristas artificiais.
 
 ---
 
-# Regra final
+# 23. Conteúdo ainda sujeito a validação
 
-Este documento define O QUE o site precisa comunicar e QUAL jornada deve existir.
+CONTENT_MISSING_OR_VALIDATION:
 
-Ele não define COMO o site deve parecer.
+- e-mail corporativo;
+- lista exata de cidades atendidas;
+- catálogo completo de serviços;
+- garantias;
+- formas de pagamento;
+- processo oficial de atendimento;
+- prazo médio de orçamento;
+- prazo médio de execução;
+- validação documental de credenciais;
+- comprovação final de claims de tempo de atuação;
+- equipe e funções;
+- cases nomeados/autorizados;
+- números dinâmicos de avaliações.
 
-A originalidade visual será criada posteriormente usando:
+A ausência desses dados não autoriza inferência.
 
-Manual de Identidade
-+
-Perfil Corporativo
-+
-Arquitetura do Site
-+
-Assets reais
+---
 
-para produzir um mockup exclusivo para este projeto.
+# 24. Requisitos especiais
+
+SPECIAL_REQUIREMENTS:
+
+- WhatsApp como canal principal de conversão;
+- WhatsApp flutuante;
+- mapa;
+- fotografias reais;
+- fotografia como evidência de execução;
+- direção Industrial Premium;
+- influência Swiss / International;
+- amarelo como assinatura e não como excesso;
+- desktop e mobile devem seguir os mockups aprovados;
+- não transformar mobile em desktop empilhado;
+- usar `implementation-spec.md`;
+- usar `asset-map.md`;
+- PageSpeed/Lighthouse mobile de produção >= 90 em Performance;
+- Accessibility / Best Practices / SEO idealmente >= 95;
+- validar em URL publicada;
+- não sacrificar fidelidade visual para atingir performance.
+
+---
+
+# 25. Sources of Truth
+
+FACTUAL:
+`brief/corporate/perfil-corporativo.pdf`
+
+BRAND:
+`brief/brand/manual-identidade.pdf`
+
+PROJECT:
+`brief/project/arquitetura-site.md`
+
+PROJECT_REFERENCE_PDF:
+`brief/project/arquitetura-site.pdf`
+
+VISUAL_DESKTOP:
+`brief/design/sections/desktop/approved-desktop.png`
+
+VISUAL_MOBILE:
+`brief/design/sections/mobile/approved-mobile.png`
+
+IMPLEMENTATION:
+`brief/design/implementation-spec.md`
+
+ASSETS:
+`brief/design/asset-map.md`
+
+TEMPLATE_REFERENCE:
+`brief/project/arquitetura-site.template.md`
+
+---
+
+# 26. Regra final de implementação
+
+A implementação não é uma nova etapa de design.
+
+Os mockups aprovados definem a composição visual.
+
+`implementation-spec.md` define como traduzi-la tecnicamente.
+
+`asset-map.md` define exatamente quais imagens utilizar.
+
+Se houver conflito:
+
+1. fatos → Perfil Corporativo;
+2. marca → Manual de Identidade;
+3. estrutura → Arquitetura;
+4. composição → Mockups aprovados;
+5. medidas / comportamento → implementation-spec.md;
+6. escolha de imagens → asset-map.md.
+
+Não redesenhar durante o desenvolvimento.
