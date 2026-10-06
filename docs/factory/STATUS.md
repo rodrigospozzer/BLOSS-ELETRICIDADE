@@ -22,8 +22,8 @@ Os estados devem ser atualizados pelas respectivas fases da Factory.
 
 ## Fase 03 — Art Direction
 
-**Status:** NÃO INICIADO  
-**Gate 03:** PENDENTE
+**Status:** CONCLUÍDA  
+**Gate 03:** APPROVED
 
 ---
 
