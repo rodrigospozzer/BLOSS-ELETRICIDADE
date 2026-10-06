@@ -1,3 +1,12 @@
+import srv1 from '../assets/originals/imgi_21_637233637_18081713804600356_8603098672081125203_n.jpg';
+import srv2 from '../assets/originals/imgi_31_669862473_18307660462273196_4843631114602791621_n.jpg';
+import srv3 from '../assets/originals/imgi_17_670937440_18089925869600356_6417007879746538124_n.webp';
+import srv4 from '../assets/originals/imgi_25_560304743_18067714658600356_1070131253366214301_n.jpg';
+
+import proj1 from '../assets/originals/imgi_10_780157979_18107915249600356_7472861473561162031_n.webp';
+import proj3 from '../assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg';
+import proj4 from '../assets/originals/imgi_29_505446825_18053595314600356_586042543300605580_n.jpg';
+
 export const siteConfig = {
   name: "Bloss Eletricidade",
   url: "https://blosseletricidade.com.br",
@@ -59,7 +68,7 @@ export const siteConfig = {
       {
         title: 'Instalações Elétricas',
         desc: 'Infraestrutura completa para obras residenciais e comerciais.',
-        image: '/src/assets/originals/imgi_21_637233637_18081713804600356_8603098672081125203_n.jpg',
+        image: srv1.src,
         deskCrop: '52% 58%',
         mobCrop: '50% 60%',
         alt: 'Infraestrutura elétrica com eletrodutos laranja instalados sobre laje.'
@@ -67,7 +76,7 @@ export const siteConfig = {
       {
         title: 'Ar-condicionado Split',
         desc: 'Instalação técnica com garantia de eficiência e acabamento.',
-        image: '/src/assets/originals/imgi_31_669862473_18307660462273196_4843631114602791621_n.jpg',
+        image: srv2.src,
         deskCrop: '64% 27%',
         mobCrop: '62% 30%',
         alt: 'Ar-condicionado Split instalado em ambiente residencial.'
@@ -75,7 +84,7 @@ export const siteConfig = {
       {
         title: 'Manutenção e Reparos',
         desc: 'Diagnóstico e resolução rápida de falhas elétricas.',
-        image: '/src/assets/originals/imgi_17_670937440_18089925869600356_6417007879746538124_n.webp',
+        image: srv3.src,
         deskCrop: '72% 52%',
         mobCrop: '72% 52%',
         alt: 'Técnico realizando serviço em equipamento externo de climatização.'
@@ -83,7 +92,7 @@ export const siteConfig = {
       {
         title: 'Projetos e Consultoria',
         desc: 'Planejamento de quadros de distribuição e iluminação.',
-        image: '/src/assets/originals/imgi_25_560304743_18067714658600356_1070131253366214301_n.jpg',
+        image: srv4.src,
         deskCrop: '55% 25%',
         mobCrop: '52% 30%',
         alt: 'Ambiente interno com projeto de iluminação instalado.'
@@ -122,25 +131,25 @@ export const siteConfig = {
     supporting: "O padrão Bloss aplicado em dezenas de residências, prédios e comércios na Serra Gaúcha.",
     items: [
       {
-        image: '/src/assets/originals/imgi_10_780157979_18107915249600356_7472861473561162031_n.webp',
+        image: proj1.src,
         deskCrop: '58% 38%',
         mobCrop: '55% 45%',
         alt: 'Infraestrutura elétrica instalada em ambiente interno ainda em obra.',
       },
       {
-        image: '/src/assets/originals/imgi_31_669862473_18307660462273196_4843631114602791621_n.jpg',
+        image: srv2.src,
         deskCrop: '58% 35%',
         mobCrop: '54% 42%',
         alt: 'Ambiente residencial com ar-condicionado Split instalado.',
       },
       {
-        image: '/src/assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg',
+        image: proj3.src,
         deskCrop: '50% 62%',
         mobCrop: '50% 64%',
         alt: 'Caixa de passagem e eletrodutos instalados sobre laje.',
       },
       {
-        image: '/src/assets/originals/imgi_29_505446825_18053595314600356_586042543300605580_n.jpg',
+        image: proj4.src,
         deskCrop: '50% 70%',
         mobCrop: '50% 67%',
         alt: 'Laje em obra com eletrodutos laranja distribuídos sobre a estrutura.',

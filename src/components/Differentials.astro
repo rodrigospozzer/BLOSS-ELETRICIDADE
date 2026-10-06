@@ -1,7 +1,7 @@
 ---
 // Differentials.astro
 import { siteConfig } from '../config/site';
-const difImage = '/src/assets/originals/imgi_8_669658421_18088477829600356_2168918359444439195_n.webp';
+import difImage from '../assets/originals/imgi_8_669658421_18088477829600356_2168918359444439195_n.webp';
 ---
 
 <section id="diferenciais" class="bg-brand-black text-brand-surface py-16 lg:py-0 overflow-hidden">
@@ -10,7 +10,7 @@ const difImage = '/src/assets/originals/imgi_8_669658421_18088477829600356_21689
     <!-- Imagem Dominante (Apenas Desktop, à direita) -->
     <div class="hidden lg:block lg:w-1/2 min-h-[400px] lg:min-h-full bg-brand-dark order-2 relative" data-reveal>
       <img 
-        src={difImage} 
+        src={difImage.src} 
         alt="Edificação com dois veículos identificados da Bloss Eletricidade em frente." 
         class="absolute inset-0 w-full h-full object-cover object-[50%_78%]"
       />

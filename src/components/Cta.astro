@@ -2,13 +2,13 @@
 // Cta.astro
 import { siteConfig } from '../config/site';
 
-const bgImage = '/src/assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg';
+import bgImage from '../assets/originals/imgi_12_730164366_18099279254600356_2569045858099444358_n.jpg';
 ---
 
 <section class="relative py-24 lg:py-32 bg-brand-black overflow-hidden" aria-label="Solicitar Orçamento">
   <div class="absolute inset-0 z-0">
     <img 
-      src={bgImage} 
+      src={bgImage.src} 
       alt="Caixa de passagem e eletrodutos laranja instalados em laje." 
       class="w-full h-full object-cover object-[50%_68%] lg:object-[50%_47%]"
       loading="lazy"

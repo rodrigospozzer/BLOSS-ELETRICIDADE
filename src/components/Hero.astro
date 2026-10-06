@@ -1,14 +1,13 @@
 ---
 import { siteConfig } from '../config/site';
-
-const heroImage = "/src/assets/originals/imgi_20_645618175_18083465300600356_3257977585925924954_n.webp";
+import heroImage from '../assets/originals/imgi_20_645618175_18083465300600356_3257977585925924954_n.webp';
 ---
 
 <section id="inicio" class="relative w-full overflow-hidden hero-container" style="background-color: var(--engineering-black);">
   <!-- Background Image with precise crops -->
   <div class="absolute inset-0 z-0 h-[115%] top-0 overflow-hidden" id="hero-bg-container">
     <img 
-      src={heroImage} 
+      src={heroImage.src} 
       alt="Profissional da Bloss Eletricidade executando infraestrutura elétrica em uma parede de obra." 
       class="w-full h-full object-cover object-[70%_38%] lg:object-[62%_50%]"
       id="hero-bg-image"

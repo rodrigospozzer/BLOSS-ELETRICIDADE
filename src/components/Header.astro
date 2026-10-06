@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../config/site';
+import logo from '../assets/brand/bloss-logo.png';
 
 const navItems = [
   { label: 'Início', href: '#inicio' },
@@ -15,7 +16,7 @@ const navItems = [
   <!-- Desktop Header -->
   <div class="hidden lg:flex container mx-auto px-14 lg:px-18 items-center h-20">
     <a href="#inicio" class="flex-shrink-0" aria-label="Página Inicial">
-      <img src="/src/assets/brand/bloss-logo.png" alt="Bloss Eletricidade Logo" class="h-10 w-auto" id="desktop-logo" />
+      <img src={logo.src} alt="Bloss Eletricidade Logo" class="h-10 w-auto" id="desktop-logo" />
     </a>
     
     <nav class="flex-1 flex justify-end items-center gap-9" aria-label="Navegação Principal">
@@ -37,7 +38,7 @@ const navItems = [
   <!-- Mobile Header -->
   <div class="lg:hidden flex items-center justify-between px-5 h-[80px] w-full" id="mobile-header-bar">
     <a href="#inicio" class="flex-shrink-0 relative" aria-label="Página Inicial">
-      <img src="/src/assets/brand/bloss-logo.png" alt="Bloss Eletricidade Logo" class="h-8 w-auto" />
+      <img src={logo.src} alt="Bloss Eletricidade Logo" class="h-8 w-auto" />
     </a>
     
     <div class="flex items-center gap-3 relative">

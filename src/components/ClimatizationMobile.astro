@@ -1,14 +1,14 @@
 ---
 // ClimatizationMobile.astro
 import { siteConfig } from '../config/site';
-const climaImage = '/src/assets/originals/imgi_17_670937440_18089925869600356_6417007879746538124_n.webp';
+import climaImage from '../assets/originals/imgi_17_670937440_18089925869600356_6417007879746538124_n.webp';
 ---
 
 <section class="lg:hidden relative py-16 overflow-hidden bg-brand-black" aria-label="Especialistas em Climatização">
   <!-- Background fotográfico escuro -->
   <div class="absolute inset-0 z-0">
     <img 
-      src={climaImage} 
+      src={climaImage.src} 
       alt="Técnico trabalhando em equipamento externo de climatização." 
       class="w-full h-full object-cover object-[70%_45%]"
       loading="lazy"
